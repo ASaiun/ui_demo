@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+<html>
+<head>
+ 
+{% block head %}  
+  {{super()}}  
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+{% endblock %}  
+      
+      <title>{%block title %}{%endblock %}</title>  
+ 
+</head>  
+    <body>  
+      {%block body %}  
+      {%endblock %}    
+	</body>  
+</html>  
