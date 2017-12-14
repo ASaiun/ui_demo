@@ -1,70 +1,63 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-
-{%block head %}  
-  {{ super() }}  
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-{%endblock %}
-
-  {%block body %}
-<div class="container"> 
+{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {%block head %} {{ super() }}
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+{%endblock %} {%block body %}
+<div class="container">
     <div class="panel-group" id="accordion">
-    {% for key, value in vepc.iteritems() %}
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h4 class="panel-title">
+        {% for key, value in vepc.iteritems() %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
 				<a data-toggle="collapse" data-parent="#accordion" 
 				   href="#{{ loop.index }}">
 					{{ key }}
 				</a>
 			</h4>
-		</div>
-		<div id="{{ loop.index }}" class="panel-collapse collapse in">
-			<div class="panel-body">
-					{% for item in value %}
-
-				<div class="row">
-					<div class="col-lg-6">
-						{{ item }} 
-					</div>
-					 <div class="col-lg-6">
-					    <div class="input-group">
-					      <input type="text" class="form-control" placeholder="{{ item[1] }} ">
-					      <span class="input-group-btn">
+            </div>
+            <div id="{{ loop.index }}" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    {% for item in value %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{ item }}
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="{{ item[1] }} ">
+                                <span class="input-group-btn">
 					        <button class="btn btn-default" type="button">Change</button>
 					      </span>
-					    </div><!-- /input-group -->
-					  </div><!-- /.col-lg-6 -->
-					
-				</div>
-
-                                         {% endfor %}
-				<div class="row">
-  						<div class="col-lg-10"		<div class="input-group">
-      							<div class="input-group-btn">
-        			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-       	<ul class="dropdown-menu">
-         <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </div><!-- /btn-group -->
-      <input type="text" class="form-control" aria-label="...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-
-
-
-									
-			</div>
-		</div>
-	</div>
-
-	{% endfor %}
-	</div>
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">section1</a></li>
+                                        <li><a href="#">section2</a></li>
+                                        <li><a href="#">section3</a></li>
+                                        <!-- <li role="separator" class="divider"></li> -->
+                                        <li><a href="#">section4</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /btn-group -->
+                                <input type="text" class="form-control" aria-label="...">
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
- {%endblock %} 
+{%endblock %}
