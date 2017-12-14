@@ -1,19 +1,30 @@
-{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {%block head %} {{ super() }}
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-{%endblock %} {%block body %}
+<<<<<<< d3cb5b5e061ec76416c7ca23a4e522ee959c98bf
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%block head %}
+  {{ super() }}
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+{%endblock %}
+
+
+{% block body %}
+{{ super() }}
 <div class="container">
     <div class="panel-group" id="accordion">
-        {% for key, value in vepc.iteritems() %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-				<a data-toggle="collapse" data-parent="#accordion" 
+    {% for key, value in vepc.iteritems() %}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+>>>>>>> add new template format
 				   href="#{{ loop.index }}">
 					{{ key }}
 				</a>
 			</h4>
+<<<<<<< d3cb5b5e061ec76416c7ca23a4e522ee959c98bf
             </div>
             <div id="{{ loop.index }}" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -61,3 +72,4 @@
     </div>
 </div>
 {%endblock %}
+>>>>>>> add new template format
