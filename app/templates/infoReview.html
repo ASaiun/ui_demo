@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {%block head %} {{ super() }}
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+{%endblock %} {% block body %} {{ super() }} {% block vepc_info_button %}
+<div class="container">
+    <div class="row">
+        <form class="col-md-offset-5" id="from_reset_review" method="POST">
+        <button type="submit" name="submit" value="return" class="btn btn-info ">return</button>
+        <button type="submit" name="submit" value="create" class="btn btn-success ">create</button>
+        </form>
+    </div>
+</div>
+{%endblock %}
+<div class="container">
+    <div class="panel-group" id="accordion">
+        {% for key, value in vepc.iteritems() %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#{{ loop.index }}">
+                    {{ key }}
+                </a>
+            </h4>
+            </div>
+            
+            <div id="{{ loop.index }}" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    {% for item in value %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            {{ item[0] }} = {{ item[1] }}
+                        </div>
+                    </div>
+                    {% endfor %}
+            	</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{%endblock %}
