@@ -6,3 +6,5 @@ from wtforms.validators import Required
 class VnfForm(FlaskForm):
     info = StringField('VnfForm information', validators=[Required()])
     submit = SubmitField('Submit')
+
+		

@@ -6,12 +6,18 @@ class Vepc(object):
 		conf = get_vepc_info(file_path)
 		sections = conf.sections()
 		self.vepc = {}
-		for x in sections:
-			self.vepc[x] = conf.items(x)
+		for value_1 in sections:
+			self.vepc[value_1] = conf.items(value_1)
+			for index_2, value_2 in enumerate(self.vepc[value_1]):
+				self.vepc[value_1][index_2] = list(self.vepc[value_1][index_2])
+				self.vepc[value_1][index_2] = list(self.vepc[value_1][index_2])
+				self.vepc[value_1][index_2].append(index_2)
+
+
 
 	def get_vepc(self):
-		for x in self.vepc:
-			print x, self.vepc[x]
+		# for value in self.vepc:
+		# 	print value, self.vepc[value]
 		return self.vepc
 
 
