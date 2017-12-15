@@ -20,4 +20,4 @@ def get_hot_info(file_path):
 
 if __name__ == '__main__':
     #get_vepc_info("vepc_flexible_communication_bsp_vsfo.cfg")
-    get_hot_info("expected.yaml")
+    get_hot_info("output/expected.yaml")

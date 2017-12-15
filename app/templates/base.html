@@ -3,32 +3,23 @@
 
 {% block head %}
   {{super()}}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>BCAT web UI</title>
-
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
-
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/narrow-jumbotron.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+  <title>{%block title %}BCAT WEB UI{%endblock %}</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/narrow-jumbotron.css') }}">
 
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
   <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
 {% endblock %}
 
-      <title>{%block title %}{%endblock %}</title>
-
-
 {%block body %}
-    <body>
     <div class="container">
      <header class="header clearfix">
         <nav>
@@ -44,10 +35,9 @@
             </li>
           </ul>
         </nav>
-        <h3 class="text-muted">BCAT web UI</h3>
+        <h3 class="text-muted">BCAT WEB UI</h3>
       </header>
     </div> <!-- /container -->
-    </body>
-
 {%endblock %}
+
 </html>
