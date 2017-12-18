@@ -8,6 +8,10 @@ class Config:
     VEPC_FILE_PATH = os.path.join(
         basedir, 'app', 'info', 'vepc_flexible_communication_bsp_vsfo.cfg')
 
+    UPLOAD_FOLDER = '/tmp/uploads/'
+    ALLOWED_EXTENSIONS = set(['yml','yaml'])
+
+
     @staticmethod
     def init_app(app):
         pass
