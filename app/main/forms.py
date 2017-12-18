@@ -8,6 +8,10 @@ class VnfForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class VnfConfigForm(FlaskForm):
-    VnfConfig = FileField('VnfForm information', validators=[FileRequired()])
+    validators = [
+        FileRequired(message='There was no file!'),
+        FileAllowed(['yml', 'yaml'], message='Must be a yaml file!')
+    ]
+    VnfConfig = FileField('VnfForm information', validators=validators)
 
 
