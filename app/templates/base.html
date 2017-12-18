@@ -6,7 +6,7 @@
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Custom styles for this template -->
-<link href="navbar.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}"/>
 {%endblock %}
 
 {% block body %}
@@ -52,7 +52,7 @@
         <!--/.container-fluid -->
     </nav>
     {% block content %} {%endblock %}
-    <footer class="footer">
+    <footer class="footer" style= "padding-top: 1.5rem;">
         <p>&copy; ENIW 2017</p>
     </footer>
 </div>

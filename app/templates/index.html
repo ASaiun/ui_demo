@@ -2,9 +2,13 @@
 
 {% block title %}Index{%endblock %}
 
+{% block head %}
+{{super()}}
+{%endblock %}
+
 {% block content %}
 {{super()}}
-<main role="main">
+<!-- <main role="main"> -->
     <div class="jumbotron">
         <h1>Wellcome </h1>
         <p>BCAT web UI will make your life easier</p>
@@ -12,9 +16,9 @@
             <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Sign up</a>
         </p>
     </div>
-    <form>
+    <form id="bootstrap-overrides">
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6" style= "padding-left: 0;padding-right: 0">
                 <label for="inputState">VNF type</label>
                 <select id="inputState" class="form-control">
                     <option selected>Choose...</option>
@@ -24,19 +28,19 @@
                     <option value="3">mme</option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6" style= "padding-left: 5;padding-right: 0">
                 <label for="inputZip">VDP name</label>
                 <input type="text" class="form-control" id="inputZip">
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12" style= "padding-left: 0;padding-right: 0">
                 <label for="inputZip">vEPC config</label>
                 <input type="text" class="form-control" id="inputZip">
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12" style= "padding-left: 0;padding-right: 0">
                 <label for="file2">VNF config</label>
                 <label class="custom-file col-md-12">
                     <input type="file" id="file2" class="custom-file-input" value="Choose VNF config">
@@ -46,7 +50,7 @@
         </div>
         <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
-</main>
+<!-- </main> -->
 {%endblock %}
 
 
