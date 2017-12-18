@@ -1,83 +1,52 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>BCAT WEB UI</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/narrow-jumbotron.css') }}">
-</head>
+{% block title %}Index{%endblock %}
 
-<body>
-    <div class="container">
-        <header class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills float-right">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">BCAT WEB UI</h3>
-        </header>
-        <main role="main">
-            <div class="jumbotron">
-                <h2 class="display-3">Wellcome to bcat web portal</h2>
-                <p class="lead">use bcat web ui to make your life easier</p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up</a></p>
-            </div>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputState">VNF type</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option value="1">epg</option>
-                            <option value="2">sapc</option>
-                            <option value="3">wmg</option>
-                            <option value="3">mme</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputZip">VDP name</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="inputZip">vEPC config</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="file2">VNF config</label>
-                        <label class="custom-file col-md-12">
-                            <input type="file" id="file2" class="custom-file-input" value="Choose VNF config">
-                            <span class="custom-file-control"></span>
-                        </label>
-                    </div>
-                </div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </form>
-        </main>
-        <footer class="footer">
-            <p>&copy; ENIW 2017</p>
-        </footer>
+{% block content %}
+{{super()}}
+<main role="main">
+    <div class="jumbotron">
+        <h1>Wellcome </h1>
+        <p>BCAT web UI will make your life easier</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Sign up</a>
+        </p>
     </div>
-    <!-- /container -->
-</body>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputState">VNF type</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option value="1">epg</option>
+                    <option value="2">sapc</option>
+                    <option value="3">wmg</option>
+                    <option value="3">mme</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputZip">VDP name</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputZip">vEPC config</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="file2">VNF config</label>
+                <label class="custom-file col-md-12">
+                    <input type="file" id="file2" class="custom-file-input" value="Choose VNF config">
+                    <span class="custom-file-control"></span>
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+</main>
+{%endblock %}
 
-</html>
+
