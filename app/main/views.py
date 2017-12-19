@@ -1,18 +1,18 @@
 from flask import render_template, current_app, request, session, redirect, url_for, flash
-from .forms import VnfForm, VnfConfigForm
+from .forms import VnfForm, VnfConfigForm, VnfForm, InfoForm
 from . import main
 from ..models import Vepc
 from werkzeug.utils import secure_filename
 
 
-@main.route('/', methods=['GET', 'POST'])
-def index():
+@main.route('/upload', methods=['GET', 'POST'])
+def upload():
     def allowed_file(filename):
-    return '.' in filename and \
+        return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.ALLOWED_EXTENSIONS
     form = VnfForm()
     return render_template('index.html', form=form)
-    if methods = 'POST':
+    if request.method == 'POST':
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
@@ -25,6 +25,13 @@ def index():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+
+@main.route('/', methods=['GET', 'POST'])
+def index():
+    form = InfoForm()
+    return render_template('index.html', form=form)
+
 
 
 @main.route('/info', methods=['GET', 'POST'])

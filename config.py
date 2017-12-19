@@ -11,6 +11,7 @@ class Config:
     UPLOAD_FOLDER = '/tmp/uploads/'
     ALLOWED_EXTENSIONS = set(['yml','yaml'])
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+    TEMPLATES_AUTO_RELOAD = True
 
 
     @staticmethod
