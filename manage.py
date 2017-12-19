@@ -1,9 +1,20 @@
 # -*- coding: utf-8 -*-
+from flask import request
 from app import create_app
 from flask_script import Manager
 
-app = create_app('default')
+app = create_app('debug')
+print app.config
+
+
+def before_request():
+    app.jinja_env.cache = {}
+
+app.before_request(before_request)
+
 manager = Manager(app)
+
+
 
 
 @manager.command

@@ -1,5 +1,4 @@
 import os
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -11,14 +10,22 @@ class Config:
     UPLOAD_FOLDER = '/tmp/uploads/'
     ALLOWED_EXTENSIONS = set(['yml','yaml'])
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
-    TEMPLATES_AUTO_RELOAD = True
-
 
     @staticmethod
     def init_app(app):
         pass
 
-config = {"default": Config}
+class DebugConfig(Config):
+    DEBUG = True
+    TEMPLATES_AUTO_RELOAD = True
+
+class ProductCconfig(Config):
+    DEBUG = False
+
+
+config = {"default": Config,
+          "debug": DebugConfig,
+          "product": ProductCconfig}
 
 if __name__ == '__main__':
     print basedir
