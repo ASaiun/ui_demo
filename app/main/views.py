@@ -30,6 +30,10 @@ def upload():
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = InfoForm()
+    if form.validate_on_submit():
+        bcat_vnf_type = form.vnf_type.data
+        bcat_vdp_name = form.vdp_info.data
+        return redirect(url_for('main.infoShow'))
     return render_template('index.html', form=form)
 
 
