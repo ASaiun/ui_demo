@@ -6,8 +6,8 @@
 <div class="container">
     <div class="row">
         <form class="col-md-offset-5" id="from_reset_review" method="POST">
-        <button type="submit" name="submit" value="reset" class="btn btn-info ">reset</button>
-        <button type="submit" name="submit" value="review" class="btn btn-success ">review</button>
+            <button type="submit" name="submit" value="reset" class="btn btn-info ">reset</button>
+            <button type="submit" name="submit" value="review" class="btn btn-success ">review</button>
         </form>
     </div>
 </div>
@@ -35,7 +35,7 @@
                             <form id="test_from" name="input" method="POST" class="input-group">
                                 <input name="_target" type="text" class="form-control" placeholder="{{ item[1] }}">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" name="submit" value="{{ key }},{{ item[2] }}">Change</button>
+                                    <button class="btn btn-default" type="submit" name="submit" value="{{ key }},{{ item[2] }}">change</button>
                                 </span>
                             </form>
                             <!-- /input-group -->
@@ -44,24 +44,31 @@
                     </div>
                     {% endfor %}
                     <div class="row">
-                        <div class="col-lg-8">
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">section1</a></li>
-                                        <li><a href="#">section2</a></li>
-                                        <li><a href="#">section3</a></li>
-                                        <!-- <li role="separator" class="divider"></li> -->
-                                        <li><a href="#">section4</a></li>
-                                    </ul>
+                        
+                    
+                    <form id="add_from" name="add" method="POST" class="input-group">
+                        <dir class=".col-md-4">
+                            <div class="form-row">
+                                <div class="form-group ">
+                                    <span class="input-group-btn ">
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option value="1">epg</option>
+                                        <option value="2">sapc</option>
+                                    </select>
+                                </span>
                                 </div>
-                                <!-- /btn-group -->
-                                <input type="text" class="form-control" aria-label="...">
                             </div>
-                            <!-- /input-group -->
-                        </div>
-                        <!-- /.col-lg-6 -->
+                        </dir>
+                        <dir class=".col-md-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="defalut_value">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" name="submit" value="add ">add</button>
+                            </span>
+                            </div>
+                        </dir>
+                    </form>
                     </div>
                 </div>
             </div>
